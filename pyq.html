@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PYQ Viewer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <h1 class="text-2xl font-bold mb-4">Most Important PYQs</h1>
+        <div id="pdf-container" class="space-y-4"></div>
+    </div>
+
+    <script>
+        const pdfs = [
+            "Sets.pdf", "Trigo.pdf", "Complex.pdf", "Straight Lines.pdf", "CnD.pdf",
+            "DI.pdf", "AOD.pdf", "ITF.pdf", "FOM.pdf", "Circle.pdf", "Limits.pdf",
+            "MOD.pdf", "Integration.pdf", "AUC.pdf", "MnD.pdf", "DE.pdf", "PnC.pdf",
+            "Prob.pdf", "3D.pdf", "Quadratic.pdf", "SNS.pdf", "Func.pdf", "Conic.pdf",
+            "BT.pdf", "Stat.pdf", "Vec.pdf"
+        ];
+
+        const container = document.getElementById("pdf-container");
+
+        pdfs.forEach(pdf => {
+            const div = document.createElement("div");
+            div.className = "flex justify-between items-center bg-gray-200 p-3 rounded-lg";
+
+            div.innerHTML = `
+                <span class="text-lg font-medium">${pdf.replace(".pdf", "")}</span>
+                <div>
+                    <a href="Most Imp PYQ/${pdf}" target="_blank" class="bg-blue-500 text-white px-3 py-1 rounded">View PYQ</a>
+                    <a href="Most Imp PYQ/Solutions/${pdf}" target="_blank" class="bg-green-500 text-white px-3 py-1 rounded">View Solution</a>
+                </div>
+            `;
+            container.appendChild(div);
+        });
+    </script>
+</body>
+</html>
